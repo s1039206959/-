@@ -1,7 +1,7 @@
 const navToggle = document.querySelector('.nav-toggle');
 const navMenu = document.querySelector('.nav-menu');
 const navLinks = document.querySelectorAll('.nav-menu a');
-const consultForms = document.querySelectorAll('.contact-form[data-mail-form]');
+ main
 const yearEl = document.getElementById('year');
 
 if (yearEl) {
@@ -14,27 +14,7 @@ if (navToggle && navMenu) {
   });
 
   navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      navMenu.classList.remove('open');
-    });
-  });
-}
-
-consultForms.forEach((form) => {
-  const feedback = form.querySelector('.form-hint');
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    if (!form.checkValidity()) {
-      if (feedback) {
-        feedback.textContent = '请先完整填写所有必填字段。';
-        feedback.style.color = '#b42318';
-      }
-      return;
-    }
-
-    const formData = new FormData(form);
+ main
     const name = formData.get('name');
     const company = formData.get('company');
     const contact = formData.get('contact');
@@ -46,12 +26,4 @@ consultForms.forEach((form) => {
     );
 
     window.location.href = `mailto:biz@youximedia.com?subject=${subject}&body=${body}`;
-
-    if (feedback) {
-      feedback.textContent = '已为您打开邮件客户端，请确认后发送。';
-      feedback.style.color = '#0f5132';
-    }
-
-    form.reset();
-  });
-});
+ main
